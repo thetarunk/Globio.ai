@@ -1,0 +1,858 @@
+
+/* =========================================
+   GLOBIO - A1 READINESS ASSESSMENT
+   COMPLETE STYLESHEET
+   ========================================= */
+
+
+/* 1. GLOBAL RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #176B5B;
+    --primary-dark: #105447;
+    --primary-light: #E5F2ED;
+
+    --background: #F7F8F5;
+    --surface: #FFFFFF;
+
+    --text-dark: #172B27;
+    --text-muted: #78847F;
+
+    --border: #E5EAE6;
+
+    --success: #23865E;
+    --warning: #C28A35;
+    --danger: #D35F52;
+
+    --radius: 14px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+
+/* 2. HEADER */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.header p {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+
+/* 3. MAIN CONTAINER AND SCREENS */
+
+.container {
+    max-width: 950px;
+    margin: 50px auto;
+    padding: 0 24px;
+}
+
+.screen {
+    display: none;
+    animation: fadeIn 0.35s ease;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* 4. COMMON ELEMENTS */
+
+.tag {
+    display: inline-block;
+    padding: 7px 13px;
+    background: var(--primary-light);
+    color: var(--primary);
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: clamp(30px, 5vw, 44px);
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    font-size: 24px;
+    letter-spacing: -0.5px;
+}
+
+p {
+    color: var(--text-muted);
+}
+
+
+/* 5. BUTTONS */
+
+.primary-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 9px;
+    padding: 14px 25px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.primary-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.primary-btn:disabled {
+    background: #AAB8B2;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.secondary-btn {
+    background: white;
+    color: var(--text-dark);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    padding: 13px 22px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.secondary-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+
+/* 6. WELCOME SCREEN */
+
+.welcome-content {
+    max-width: 680px;
+    margin: 70px auto;
+    text-align: center;
+}
+
+.welcome-content h1 {
+    margin-top: 25px;
+    margin-bottom: 18px;
+}
+
+.welcome-content > p {
+    max-width: 550px;
+    margin: 0 auto 30px;
+    font-size: 16px;
+}
+
+.assessment-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin: 35px 0;
+}
+
+.assessment-info div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.assessment-info strong {
+    font-size: 24px;
+    color: var(--primary);
+}
+
+.assessment-info span {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.disclaimer {
+    margin-top: 20px !important;
+    font-size: 12px !important;
+}
+
+
+/* 7. ASSESSMENT SCREEN */
+
+.assessment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.assessment-header h2 {
+    margin-top: 7px;
+}
+
+.assessment-header > span {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+
+/* PROGRESS BAR */
+
+.progress-container {
+    height: 7px;
+    background: #E5EAE6;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 35px;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: var(--primary);
+    border-radius: 20px;
+    transition: width 0.3s ease;
+}
+
+
+/* QUESTION CARD */
+
+.question-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 35px;
+    min-height: 300px;
+    box-shadow: 0 4px 15px rgba(20, 50, 40, 0.03);
+}
+
+.question-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.question-meta span {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary);
+    background: var(--primary-light);
+    padding: 6px 11px;
+    border-radius: 20px;
+}
+
+.question-meta span:last-child {
+    background: #F1F3F1;
+    color: var(--text-muted);
+}
+
+.question-card h2 {
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+
+/* READING PASSAGE */
+
+.passage-card {
+    background: var(--primary-light);
+    color: var(--text-dark);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 22px;
+    font-size: 15px;
+    line-height: 1.8;
+    border-left: 4px solid var(--primary);
+}
+
+
+/* ANSWER OPTIONS */
+
+.options-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 13px;
+}
+
+.option {
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: white;
+    text-align: left;
+    font-size: 15px;
+    color: var(--text-dark);
+}
+
+.option:hover {
+    border-color: var(--primary);
+    background: var(--primary-light);
+}
+
+.option.selected {
+    border: 2px solid var(--primary);
+    background: var(--primary-light);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+
+/* QUESTION NAVIGATION */
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+
+/* 8. RESULTS SCREEN */
+
+.results-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.results-header h1 {
+    margin: 18px 0 12px;
+}
+
+.results-header p {
+    max-width: 550px;
+    margin: auto;
+}
+
+
+/* OVERALL READINESS CARD */
+.score-display {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 5px;
+}
+
+.score-display span:last-child {
+    font-size: 22px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.readiness-card {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 38px 25px;
+    border-radius: 18px;
+    margin-bottom: 40px;
+}
+
+.readiness-card p {
+    color: #D5EAE3;
+    font-size: 14px;
+}
+
+.score-display {
+    margin: 12px 0;
+}
+
+.score-display span:first-child {
+    font-size: 62px;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+.score-display span:last-child {
+    font-size: 22px;
+    color: #C4DDD5;
+}
+
+.readiness-card h2 {
+    font-size: 21px;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.readiness-card p:last-child {
+    max-width: 500px;
+    margin: auto;
+}
+
+
+/* 9. RESULT SECTIONS */
+
+.result-section {
+    margin-bottom: 40px;
+}
+
+.result-section h2 {
+    margin-bottom: 7px;
+}
+
+.result-section > p {
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+
+/* 10. SECTION-WISE SCORES */
+
+.section-score-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.skill-card {
+    background: white;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.skill-card h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.skill-score {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+
+/* SKILL STATUS */
+
+.skill-status {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.skill-status.ready {
+    color: var(--success);
+}
+
+.skill-status.developing {
+    color: var(--warning);
+}
+
+.skill-status.needs-practice {
+    color: var(--danger);
+}
+
+.skill-status.insufficient {
+    color: var(--text-muted);
+}
+
+
+/* SKILL PROGRESS BAR */
+
+.skill-progress {
+    height: 6px;
+    background: #E8ECE9;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 12px 0;
+}
+
+.skill-progress-fill {
+    height: 100%;
+    background: var(--primary);
+    border-radius: 20px;
+}
+
+
+/* 11. SKILL-WISE BREAKDOWN */
+
+#skill-results {
+    display: block;
+}
+
+.skill-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 18px;
+}
+
+.skill-section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.skill-section-heading h3 {
+    font-size: 18px;
+    color: var(--text-dark);
+}
+
+.skill-section-heading span {
+    color: var(--primary);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+/* EXPANDABLE SKILL DROPDOWNS */
+
+.skill-accordion {
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    background: white;
+}
+
+.skill-accordion:last-child {
+    margin-bottom: 0;
+}
+
+.skill-accordion-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.skill-accordion-header::-webkit-details-marker {
+    display: none;
+}
+
+.skill-name {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.skill-mark {
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.skill-chevron {
+    color: var(--text-muted);
+    font-size: 20px;
+    transition: transform 0.2s ease;
+}
+
+.skill-accordion[open] .skill-chevron {
+    transform: rotate(180deg);
+}
+
+.skill-accordion[open] .skill-accordion-header {
+    background: #FAFCFA;
+}
+
+.skill-accordion-content {
+    padding: 0 15px 17px;
+    border-top: 1px solid var(--border);
+}
+
+.skill-detail-score {
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 13px;
+    margin-bottom: 4px;
+}
+
+.skill-accordion-content p {
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+
+/* EARLY SIGNAL NOTE */
+
+.early-signal-note {
+    background: #F5F5F1;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 12px !important;
+    margin-top: 10px;
+}
+
+
+/* 12. IMPROVEMENT RECOMMENDATIONS */
+
+#recommendations-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.recommendation-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: white;
+    padding: 23px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.recommendation-card h3 {
+    font-size: 17px;
+    margin-bottom: 2px;
+}
+
+.recommendation-card p {
+    font-size: 14px;
+}
+
+.recommendation-card strong {
+    font-size: 14px;
+}
+
+.recommendation-card ul {
+    padding-left: 20px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.recommendation-card li {
+    margin-bottom: 6px;
+}
+
+.recommendation-card a {
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.recommendation-card a:hover {
+    text-decoration: underline;
+}
+
+
+/* PRIORITY LABELS */
+
+.priority-label {
+    display: inline-block;
+    width: fit-content;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.priority-high {
+    color: var(--danger);
+    background: #FCEDEA;
+}
+
+.priority-normal {
+    color: var(--warning);
+    background: #FFF5E4;
+}
+
+.recommendation-marks {
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* 13. NOTICE CARD */
+
+.notice-card {
+    background: #FFF8E9;
+    border: 1px solid #F0E0BA;
+    border-radius: var(--radius);
+    padding: 23px;
+    margin-bottom: 30px;
+}
+
+.notice-card h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.notice-card p {
+    font-size: 13px;
+    color: #776746;
+}
+
+
+/* 14. RESULTS ACTIONS */
+
+.results-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+
+/* 15. FOOTER */
+
+.footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid var(--border);
+}
+
+.footer p {
+    font-size: 12px;
+}
+
+
+/* 16. RESPONSIVE DESIGN */
+
+@media (max-width: 700px) {
+
+    .header {
+        padding: 18px 5%;
+    }
+
+    .header p {
+        font-size: 11px;
+    }
+
+    .container {
+        margin: 30px auto;
+        padding: 0 16px;
+    }
+
+    .welcome-content {
+        margin: 45px auto;
+    }
+
+    .assessment-info {
+        padding: 17px 10px;
+    }
+
+    .assessment-info strong {
+        font-size: 20px;
+    }
+
+    .assessment-info span {
+        font-size: 10px;
+    }
+
+    .assessment-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .question-card {
+        padding: 22px;
+    }
+
+    .question-card h2 {
+        font-size: 19px;
+    }
+
+    .options-container {
+        grid-template-columns: 1fr;
+    }
+
+    .section-score-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-section {
+        padding: 15px;
+    }
+
+    .skill-accordion-header {
+        gap: 8px;
+        padding: 13px 10px;
+    }
+
+    .skill-name {
+        font-size: 13px;
+    }
+
+    .recommendation-card {
+        padding: 18px;
+    }
+
+    .score-display span:first-child {
+        font-size: 50px;
+    }
+
+    .navigation button {
+        padding: 12px 16px;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .assessment-info {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .skill-section-heading h3 {
+        font-size: 16px;
+    }
+
+    .skill-mark {
+        font-size: 13px;
+    }
+
+}

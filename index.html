@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Globio | A1 Readiness Check</title>
+
+    <link rel="stylesheet" href="globio.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">globio<span>.</span></div>
+        <p>A1 German Readiness Check</p>
+    </header>
+
+    <main class="container">
+
+        <!-- SCREEN 1: WELCOME -->
+        <section id="welcome-screen" class="screen active">
+
+            <div class="welcome-content">
+
+                <span class="tag">GERMAN A1 ASSESSMENT</span>
+
+                <h1>Are you ready for your A1 exam?</h1>
+
+                <p>
+                    Discover your German language readiness.
+                    Identify your strengths, understand your learning gaps,
+                    and get personalised recommendations.
+                </p>
+
+                <div class="assessment-info">
+                    <div>
+                        <strong>18</strong>
+                        <span>Questions</span>
+                    </div>
+
+                    <div>
+                        <strong>3</strong>
+                        <span>Skill areas</span>
+                    </div>
+
+                    <div>
+                        <strong>10–15 min</strong>
+                        <span>Estimated time</span>
+                    </div>
+                </div>
+
+                <button type="button" id="start-btn" class="primary-btn">
+                    Start Assessment →
+                </button>
+
+                <p class="disclaimer">
+                    This is a foundation-level diagnostic, not an official
+                    Goethe A1 exam or pass prediction.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- SCREEN 2: ASSESSMENT -->
+        <section id="assessment-screen" class="screen">
+
+            <div class="assessment-header">
+
+                <div>
+                    <span id="section-label">VOCABULARY</span>
+                    <h2>Test your German skills</h2>
+                </div>
+
+                <span id="question-counter">Question 1 of 18</span>
+
+            </div>
+
+            <!-- PROGRESS -->
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+
+            <!-- QUESTION -->
+            <div class="question-card">
+
+                <div class="question-meta">
+                    <span id="question-category">Vocabulary</span>
+                    <span id="question-difficulty">A1 Level</span>
+                </div>
+
+                <h2 id="question-text">
+                    What does "der Apfel" mean?
+                </h2>
+
+                <!-- READING PASSAGE WILL BE INSERTED HERE BY JS -->
+
+                <div
+                    id="options-container"
+                    class="options-container"
+                    aria-live="polite">
+                </div>
+
+            </div>
+
+            <!-- NAVIGATION -->
+            <div class="navigation">
+
+                <button
+                    type="button"
+                    id="previous-btn"
+                    class="secondary-btn"
+                    disabled>
+                    ← Previous
+                </button>
+
+                <button
+                    type="button"
+                    id="next-btn"
+                    class="primary-btn"
+                    disabled>
+                    Next →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SCREEN 3: RESULTS -->
+        <section id="results-screen" class="screen">
+
+            <div class="results-header">
+
+                <span class="tag">YOUR ASSESSMENT REPORT</span>
+
+                <h1>Your A1 readiness report</h1>
+
+                <p>
+                    Here's what your answers tell us about your
+                    current German language foundation.
+                </p>
+
+            </div>
+
+            <!-- OVERALL READINESS -->
+            <div class="readiness-card">
+
+                <p>Overall Readiness Score</p>
+
+                <div class="score-display">
+    <span id="overall-score">0</span>
+    <span>/100</span>
+</div>
+
+                <h2 id="readiness-status">Calculating...</h2>
+
+                <p id="readiness-description">
+                    Your readiness assessment will appear here.
+                </p>
+
+            </div>
+
+            <!-- SECTION AND SKILL RESULTS -->
+            <div class="result-section">
+
+                <h2>Readiness by skill</h2>
+
+                <p>
+                    See how you performed across the assessed skill areas.
+                </p>
+
+                <div id="skill-results">
+                    <!-- Results generated through JavaScript -->
+                </div>
+
+            </div>
+
+            <!-- IMPROVEMENT AREAS -->
+            <div class="result-section">
+
+                <h2>What you need to improve</h2>
+
+                <p>
+                    Understand your learning gaps and how to strengthen them.
+                </p>
+
+                <div id="recommendations-container">
+                    <!-- Recommendations generated through JavaScript -->
+                </div>
+
+            </div>
+
+            <!-- EXAM LIMITATION -->
+            <div class="notice-card">
+
+                <h3>Before booking your exam</h3>
+
+                <p>
+                    This assessment covers vocabulary, grammar and reading.
+                    Listening and speaking have not been assessed.
+                    Complete practice in all four Goethe A1 exam skills
+                    before making your exam booking decision.
+                </p>
+
+            </div>
+
+            <!-- RESULTS ACTIONS -->
+            <div class="results-actions">
+
+                <button
+                    type="button"
+                    id="practice-btn"
+                    class="primary-btn">
+                    Practise My Weak Areas →
+                </button>
+
+                <button
+                    type="button"
+                    id="retest-btn"
+                    class="secondary-btn">
+                    Retake Assessment ↻
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2026 Globio. Learn with confidence.</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="globio.js"></script>
+
+</body>
+</html>
